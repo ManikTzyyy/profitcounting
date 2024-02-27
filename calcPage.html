@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maniktzy</title>
+    <link rel="icon" href="image/money.png" type="image/png" />
+    <link rel="shortcut icon" href="asset/icon/money.png" type="image/png" />
+
+    <link rel="stylesheet" href="style2.css" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container-head">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+          <div class="container">
+            <a
+              class="navbar-brand"
+              href="https://www.tradingview.com/"
+              target="_blank"
+            >
+              <i class="fa-brands fa-digital-ocean" style="color: #63e6be"></i>
+            </a>
+            <a class="navbar-brand" href="#">Maniktzy</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div
+              class="collapse navbar-collapse justify-content-between"
+              id="navbarSupportedContent"
+            >
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    aria-current="page"
+                    href="https://maniktzyyy.github.io/manik.github.io/"
+                    target="_blank"
+                    >Me</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="https://maniktzyyy.github.io/cryptocurrenty/"
+                    >Price info</a
+                  >
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Menu
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a class="dropdown-item" href="#profit"
+                        >Profit Calculation</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#target">Target Profit</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#persen"
+                        >Persent Calculation</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <!-- Price info -->
+      <div class="container-price-info">
+        <h3>Last Price information</h3>
+        <div class="container-info">
+          <div class="container-display">
+            <p>
+              <i class="fa-brands fa-btc" style="color: #ffd43b"></i> BTC/IDR
+              last Price :Rp.<span id="btc-price"></span>
+            </p>
+            <p>
+              <i class="fa-brands fa-ethereum" style="color: #74c0fc"></i>
+              ETH/IDR last Price :Rp. <span id="eth-price"></span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- End Price info -->
+    </div>
+
+    <img class="background" src="asset/japan.jpg" alt="" />
+
+    <div class="br">
+    
+    </div>
+
+    <div class="container-first" id="profit">
+      <div class="container-content">
+        <div class="container-form">
+          <h2 class="text-center">Profit/Lost</h2>
+          <p>menentukan nilai asset anda</p>
+          <form id="profitForm">
+            <div class="mb-3">
+              <label for="harga_awal" class="form-label"
+                >Harga Aset Saat Awal Beli</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="harga_awal"
+                name="harga_awal"
+                placeholder="Masukkan harga awal"
+                required
+                inputmode="numeric"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="harga_akhir" class="form-label"
+                >Harga Aset Terbaru</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="harga_akhir"
+                name="harga_akhir"
+                placeholder="Masukkan harga akhir"
+                required
+                inputmode="numeric"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="harga_beli" class="form-label">Beli Aset</label>
+              <input
+                type="text"
+                class="form-control"
+                id="harga_beli"
+                name="harga_beli"
+                placeholder="Masukkan beli"
+                required
+                inputmode="numeric"
+              />
+            </div>
+            <div class="text-center">
+              <button
+                type="button"
+                style="--clr: #3468c0"
+                class="btn btn-success"
+                name="submit"
+                onclick="hitungProfit()"
+              >
+                <span>prosses</span>
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="container-result" id="resultContainer"></div>
+      </div>
+    </div>
+
+   <div class="container-second" id="target">
+    <div class="container-content">
+        <div class="container-form">
+            <h2 class="text-center">Target profit %</h2>
+            <p class="text-center">
+                menentukan target profit dalam presentase yang diinginkan
+            </p>
+
+            <form id="targetForm">
+                <div class="mb-3">
+                    <label for="harga_aset" class="form-label">Harga Aset Saat Awal Beli</label>
+                    <input type="text" class="form-control" id="harga_aset" name="harga_aset" placeholder="Masukkan harga asset saat awal beli" required inputmode="numeric">
+                </div>
+
+                <div class="mb-3">
+                    <label for="aset_dimiliki" class="form-label">Nilai Aset di Beli</label>
+                    <input type="text" class="form-control" id="aset_dimiliki" name="aset_dimiliki" placeholder="Masukkan total asset yang dimiliki" required inputmode="numeric">
+                </div>
+
+                <div class="mb-3">
+                    <label for="persen" class="form-label">Persentase untuk profit</label>
+                    <input type="text" class="form-control" id="persen" name="persen" placeholder="Masukkan persentase" required inputmode="numeric">
+                </div>
+                <div class="text-center">
+                    <button type="button" style="--clr: #d24545" class="btn btn-success" name="proses" onclick="hitungTargetProfit()"><span>prosses</span></button>
+                </div>
+            </form>
+        </div>
+        <div class="container-result" id="targetResult">
+        </div>
+    </div>
+</div>
+
+<!-- <div class="container-third" id="persen">
+    <div class="container-content">
+        <div class="container-form">
+            <h2 class="text-center">Mencari nilai %</h2>
+            <form id="nilaiPersenForm">
+                <div class="mb-3">
+                    <label for="nilai" class="form-label">Nilai</label>
+                    <input type="text" class="form-control" id="nilai" name="nilai" placeholder="Masukkan Nilai" required inputmode="numeric">
+                </div>
+
+                <div class="mb-3">
+                    <label for="persen" class="form-label">Nilai %</label>
+                    <input type="text" class="form-control" id="persen" name="persen" placeholder="Masukkan nilai persen" required inputmode="numeric">
+                </div>
+                <div class="text-center">
+                    <button type="button" style="--clr: #dc84f3" class="btn btn-success" name="persenan" onclick="hitungNilaiPersen()"><span>prosses</span></button>
+                </div>
+            </form>
+        </div>
+        <div class="container-result" id="persenResult">
+        </div>
+    </div>
+</div> -->
+    <div
+      class="container-footer"
+      style="background-color: black; color: white; overflow: hidden"
+    >
+      <footer>
+        <div class="container">
+          <h4 style="padding-top: 20px">Contact Me</h4>
+          <ul class="contact-list" style="list-style-type: none; padding: 0">
+            <li>
+              <i class="fas fa-envelope"></i> Email: manikyogantara@gmail.com
+            </li>
+            <li>
+              <i class="fas fa-map-marker-alt"></i> Address: Bali, Indonesia
+            </li>
+            <li><i class="fas fa-phone"></i> Phone: +62-878-4890-5327</li>
+          </ul>
+          <div class="text-center">
+            <p>&copy; 2024 ManikTzy. All Rights Reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="script2.js"></script>
+    <script src="script3.js"></script>
+
+    <script src="js/script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

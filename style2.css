@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  top: 0;
+}
+
+.background {
+    position: fixed; /* Menggunakan fixed agar gambar tetap di tempat ketika digulir */
+    z-index: -999;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-size: auto; /* Untuk menyesuaikan gambar agar mengisi seluruh area */
+    background-repeat: no-repeat; /* Untuk menghindari pengulangan gambar */
+  }
+
+.container-head {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #2d2d2dc3; /* Ubah sesuai kebutuhan */
+  z-index: 1000; /* Sesuaikan kebutuhan jika diperlukan */
+  border-radius: 0 0 30px 30px;
+  color: white;
+}
+
+.container-price-info {
+  margin: 20px;
+  font-size: 3vh;
+  padding: 4px 0;
+  border-top: solid rgb(48, 48, 48) 1px;
+  
+}
+
+.container-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container-first {
+  /* background-image: url(background/night.jpg); */
+  background-size: cover;
+  background-position: center;
+  padding: 50px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding-top: 39vh;
+}
+.container-second {
+  /* background-image: url(background/gtr.jpg); */
+  background-size: cover;
+  background-position: center;
+  padding: 50px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.container-third {
+  /* background-image: url(background/japan.jpg); */
+  background-size: cover;
+  background-position: center;
+  padding: 50px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.container-content {
+  background-color: rgba(0, 0, 0, 0.285);
+  min-height: 40vh;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px 2px rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  width: 100vh;
+  display: flex;
+  flex-direction: column;
+
+}
+
+a:hover {
+  letter-spacing: 0.25em;
+  transition: 0.5s;
+  filter: drop-shadow(0 0 5px rgb(255, 255, 255));
+}
+
+.container-form {
+  padding: 5px;
+  color: aliceblue;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+}
+
+.container-result {
+  position: relative;
+  color: rgb(255, 255, 255);
+  border-top: #ffffff solid 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 100px;
+  font-size: 3vh;
+  flex-direction: column;
+  background-color: black;
+  border-radius: 10px;
+  padding: 10px;
+  width: 80vh;
+  box-shadow: 0px 0px 10px 2px rgba(255, 255, 255, 0.2);
+}
+
+button {
+  position: relative;
+  background-color: aliceblue;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  letter-spacing: 0.1em;
+  font-weight: 400;
+  padding: 10px 30px;
+  transition: 0.5s;
+}
+
+button:hover {
+  letter-spacing: 0.25em;
+  background: var(--clr);
+  box-shadow: 0 0 30px var(--clr);
+  color: var(--clr);
+}
+
+button:before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+
+  background: rgba(255, 253, 253, 0);
+}
+
+button span {
+  position: relative;
+  z-index: 1;
+}
+
+
+.br {
+    padding-bottom: 10vh;
+  }
+
+@media screen and (max-width: 768px) {
+  footer {
+    position: static;
+  }
+
+  .container-price-info {
+    font-size: 2vh;
+  }
+
+  .container-result {
+    font-size: 2vh;
+    flex-direction: column;
+    width: 45vh;
+  }
+
+
+  .container-content {
+    justify-content: center;
+    align-items: center;
+    width: 45vh;
+    display: flex;
+    flex-direction: column;
+  }
+}
