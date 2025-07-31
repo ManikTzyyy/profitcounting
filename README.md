@@ -1,3 +1,3 @@
-#profit counting for crypto
+#profit counting
 
 demo : https://maniktzyyy.github.io/profitcounting/
